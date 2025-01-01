@@ -16,11 +16,16 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      inject: true
     }),
   ],
   devServer: {
